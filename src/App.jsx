@@ -1,10 +1,13 @@
+import NavBar from './components/NavBar/NavBar'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import './App.css'
 
 function App() {
 
   return (
     <div>
-      <h1>Hola INMUNDO!</h1>
+      <NavBar />
+      <ItemListContainer greeting={"Bienvenidos a Jordan Sports"}/>
     </div>
   )
 }
