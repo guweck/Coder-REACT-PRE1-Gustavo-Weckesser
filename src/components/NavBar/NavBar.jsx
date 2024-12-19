@@ -1,24 +1,31 @@
+import CartWidget from "./CartWidget"
+import { BsBox } from "react-icons/bs";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 
-import React from 'react'
-import Carrito from './Carrito'
-import "./navbar.scss"
+import "./navbar.css"
+
 const NavBar = () => {
-    return (
-        <nav className="navbar">
-            <div className="brand">
-                <img src="https://i.postimg.cc/yxcJHJTL/jordan.png" />
-                <p>Jordan Sports</p>
-            </div>
-            <ul className="categories">
-                <li> Remeras</li>
-                <li> Buzos</li>
-                <li> Calzas</li>
-                <li> Zapatillas</li>
-                <li> Accesorios</li>
-            </ul>
-            <Carrito />
-        </nav>
-    )
-}
 
+  const navigate = useNavigate()
+
+  return (
+    <nav className="navbar">
+
+      <button onClick={ () => navigate(-1) } >Ir hacia atras</button>
+
+      <ul className="categories">
+        <NavLink to="/category/remeras" className={ ( { isActive } ) => isActive ? "category-active" : "category" } >Remeras</NavLink>
+        <NavLink to="/category/pantalones" className={ ( { isActive } ) => isActive ? "category-active" : "category" }>Pantalones</NavLink>
+        <NavLink to="/category/zapatillas" className={ ( { isActive } ) => isActive ? "category-active" : "category" }>Zapatillas</NavLink>
+      </ul>
+
+      <Link to="/" className="brand primary-font-color">
+        <BsBox className="icon-brand" />
+        <p className="title-brand ">Box Ecommerce</p>
+      </Link>
+
+      <CartWidget />
+    </nav>
+  )
+}
 export default NavBar
