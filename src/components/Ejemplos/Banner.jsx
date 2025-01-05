@@ -19,7 +19,7 @@ const Banner = () => {
 
   return (
     <div className="banner" >
-      <img src="https://cdnb.artstation.com/p/assets/images/images/045/265/153/large/world-of-gaming-sports-banner.jpg?1642330191" alt="" />
+      <img src ="https://cdnb.artstation.com/p/assets/images/images/045/265/153/large/world-of-gaming-sports-banner.jpg?1642330191" alt="" />
     </div>
   )
 }
